@@ -1,4 +1,44 @@
 .card {
+  @apply grid snap-center flex-shrink-0 bg-[#292929] p-7 xs:p-10 opacity-40 hover:opacity-100 transition-opacity duration-200 rounded-lg cursor-pointer;
+  grid-template-rows: 128px 76px 104px auto;
   width: min(80vw, 500px);
-  @apply flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 snap-center bg-[#292929] p-5 xs:p-10 opacity-40 hover:opacity-100 transition-opacity duration-200 cursor-pointer;
+}
+
+@media screen and (max-width: 1279px) {
+  .card {
+    grid-template-rows: 128px 76px 104px auto;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .card {
+    grid-template-rows: 112px 76px 96px auto;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .card {
+    grid-template-rows: 112px 68px 96px auto;
+  }
+}
+
+@media screen and (max-width: 329px) {
+  .card {
+    grid-template-rows: 112px 68px 92px auto;
+  }
+}
+
+.list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: rgba(236, 219, 186, 60);
+  border-radius: 9999px;
+  border: 3px transparent solid;
+  background-clip: padding-box;
 }

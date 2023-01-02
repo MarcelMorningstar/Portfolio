@@ -19,10 +19,10 @@ export default function Contact({}: Props) {
 
   return (
     <Layout title='contact'>
-      <div className='flex flex-col gap-10'>
+      <div className='flex flex-col gap-9'>
         <h4 className={styles.title}>Hello World <span className='underline decoration-[var(--color)]'>bla bla</span></h4>
 
-        <div className='space-y-3'>
+        <div className='space-y-1'>
           <div className='flex items-center justify-center gap-5'>
             <HiPhone className='w-7 h-7 text-[var(--color)] animate-pulse' />
             <p className={styles.contacts}>+371 26521385</p>

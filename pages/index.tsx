@@ -31,7 +31,6 @@ export default function Home({ pageInfo, experiences, skills, projects }: Props)
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }, [windowSize])
   
-
   return (
     <div className='main h-screen text-[var(--text-color)] snap-y snap-mandatory z-0 overflow-y-scroll scroll-smooth scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#D65A31]/75'>
       <Head>

@@ -46,7 +46,7 @@ export default function Projects({ projects }: Props) {
               </motion.div>
               
 
-              <div className='space-y-4 sm:space-y-10 lg:px-16 xl:px-20 2xl:px-24' style={{ width: 'min(80vw, 64rem)'}}>
+              <div className='space-y-4 xl:space-y-8 lg:px-16 xl:px-20 2xl:px-24' style={{ width: 'min(80vw, 64rem)'}}>
                 <h4 className='text-center text-3xl sm:text-4xl font-semibold'>{ project.title }</h4>
                 
                 <div className='flex items-center justify-center space-x-2'>
@@ -54,9 +54,9 @@ export default function Projects({ projects }: Props) {
                     project.technologies.map(technology => (
                       <Image
                         key={technology._id}
-                        className='w-10 h-10 object-contain' 
-                        width={40}
-                        height={40}
+                        className='w-10 h-10 sm:w-14 sm:h-14 p-1 object-contain rounded-full border border-[var(--fg-color)]'
+                        width={56}
+                        height={56}
                         src={urlFor(technology.image).url()}
                         alt="" 
                       />
