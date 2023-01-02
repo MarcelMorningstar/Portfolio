@@ -1,0 +1,4 @@
+.card {
+  width: min(80vw, 500px);
+  @apply flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 snap-center bg-[#292929] p-5 xs:p-10 opacity-40 hover:opacity-100 transition-opacity duration-200 cursor-pointer;
+}

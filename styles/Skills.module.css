@@ -1,0 +1,14 @@
+.skillImage {
+  width: min(13vh, min(21vw, 128px));
+  height: min(13vh, min(21vw, 128px));
+}
+
+.skillHover {
+  width: min(13vh, min(21vw, 128px));
+  height: min(13vh, min(21vw, 128px));
+}
+
+.skillHoverText {
+  font-size: min(4vh, min(7vw, 30px));
+  @apply font-bold text-black;
+}

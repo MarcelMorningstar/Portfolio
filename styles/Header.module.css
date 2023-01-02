@@ -1,0 +1,70 @@
+.header {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 7;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.link svg {
+  width: 27px;
+  height: 27px;
+  fill: var(--fg-color);
+  transition: var(--transition);
+}
+
+@media (pointer: fine) {
+  .link:hover svg {
+    fill: var(--color);
+  }
+}
+
+@media (hover: hover) {
+  .link:active svg {
+    fill: var(--color);
+    transition: 0s;
+  }
+}
+
+.link p {
+  color: var(--fg-color);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+@media (pointer: fine) {
+  .link:hover p {
+    color: var(--color);
+  }
+}
+
+@media (hover: hover) {
+  .link:active p {
+    color: var(--color);
+    transition: 0s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .link p {
+    display: none
+  }
+}

@@ -1,0 +1,108 @@
+.imageContainer {
+  width: min(42vh, min(80vw, 360px));
+  height: min(46vh, min(92vw, 470px));
+  display: grid;
+  /* grid-template-columns: 40px 90px 100px 50px 20px 30px 10px; */
+  /* grid-template-rows: 10px 40px 40px 50px 30px 25px 50px 10px 20px 60px 30px 15px 20px; */
+  grid-template-columns: 4fr 9fr 10fr 5fr 2fr 3fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr 5fr 3fr 2.5fr 5fr 1fr 2fr 6fr 3fr 1.5fr 2fr;
+  grid-template-areas: 
+    ". . b . . . ."
+    ". a b . . . ."
+    ". a b c c . ."
+    "d d b c c . ."
+    "d d b f f f ."
+    "d d e f f f ."
+    ". g e f f f ."
+    ". g e i i i i"
+    ". g h i i i i"
+    ". j h i i i i"
+    ". j h k . . ."
+    ". . h k . . ."
+    ". . h . . . .";
+  gap: 8px;
+}
+
+.imageContainer div {
+  background-size: min(42vh, min(80vw, 360px)) min(52vh, min(105vw, 470px));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  border-radius: 9px; 
+}
+
+@media screen and (max-width: 1000px) {
+  .imageContainer {
+    width: min(26vh, min(80vw, 360px));
+    height: min(30vh, min(92vw, 470px));
+  }
+
+  .imageContainer div {
+    background-size: min(27vh, min(80vw, 360px)) min(36vh, min(105vw, 470px));
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .imageContainer {
+    gap: 6px
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .imageContainer div {
+    border-radius: 6px;
+  }
+}
+
+.a {
+  grid-area: a;
+}
+
+.b {
+  grid-area: b;
+}
+
+.c {
+  grid-area: c;
+}
+
+.d {
+  grid-area: d;
+}
+
+.e {
+  grid-area: e;
+}
+
+.f {
+  grid-area: f;
+}
+
+.g {
+  grid-area: g;
+}
+
+.h {
+  grid-area: h;
+}
+
+.i {
+  grid-area: i;
+}
+
+.j {
+  grid-area: j;
+}
+
+.k {
+  grid-area: k;
+}
+
+.textContainer {
+  width: min(80vw, 500px);
+}
+
+@media screen and (min-width: 768px) {
+  .textContainer {
+    width: min(50vw, 500px)
+  }
+}

@@ -1,0 +1,71 @@
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 12px;
+  row-gap: 4px;
+  margin: 12px 0;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  color: var(--fg-color);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  border-radius: 9999px;
+  outline: 1px solid transparent;
+  transition: var(--transition);
+}
+
+@media (pointer: fine) {
+  .btn:hover {
+    color: var(--color);
+    outline: 1px solid var(--color);
+  }
+}
+
+@media (hover: hover) {
+  .btn:active {
+    color: var(--color);
+    outline: 1px solid var(--color);
+    transition: 0s;
+  }
+}
+
+@media screen and (max-width: 482px) {
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .btnContainer {
+    column-gap: 7px;
+  }
+  
+  .btn {
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+@media screen and (max-width: 362px) {
+  .btnContainer {
+    column-gap: 3px;
+  }
+  
+  .btn {
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 312px) {
+  .btnContainer {
+    column-gap: 1px;
+  }
+  
+  .btn {
+    padding: 0.3rem 0.31rem;
+  }
+}
