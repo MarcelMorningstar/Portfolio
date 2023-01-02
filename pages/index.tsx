@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import Head from 'next/head'
-// import Link from 'next/link'
-// import Image from 'next/image'
 import { GetStaticProps } from 'next'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
@@ -68,20 +66,6 @@ export default function Home({ pageInfo, experiences, skills, projects }: Props)
       <section id='contact' className='snap-center'>
         <Contact />
       </section>
-
-      {/* <footer className='absolute left-[50%] bottom-7 translate-x-[-50%] cursor-pointer'>
-        <Link href='#hero'>
-          <div className='flex items-center justify-center'>
-            <Image 
-              className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-              width={40}
-              height={40}
-              src={image}
-              alt="" 
-            />
-          </div>
-        </Link>
-      </footer> */}
     </div>
   )
 }
