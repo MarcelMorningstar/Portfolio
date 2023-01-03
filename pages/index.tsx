@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import useWindowSize from '../hooks/useWindowSize'
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
@@ -22,13 +22,24 @@ type Props = {
   projects: Project[]
 }
 
+const offSetContext = createContext({ x: 0, y: 0 });
+
 export default function Home({ pageInfo, experiences, skills, projects }: Props) {
+  const [offSet, setOffSet] = useState({ x: 0, y: 0 })
   const windowSize = useWindowSize()
 
   useEffect(() => {
-    let vh = windowSize.height * 0.01;
+    let vh = windowSize.height * 0.01
+    
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
 
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    let div = document.getElementById('imageContainer') as HTMLDivElement
+
+    setOffSet({
+      x: div.offsetLeft,
+      y: div.offsetTop
+    })
   }, [windowSize])
   
   return (
@@ -47,7 +58,9 @@ export default function Home({ pageInfo, experiences, skills, projects }: Props)
       </section>
 
       <section id='about' className='snap-center'>
-        <About pageInfo={pageInfo} />
+        <offSetContext.Provider value={{ x: offSet.x, y: offSet.y }}>
+          <About pageInfo={pageInfo} />
+        </offSetContext.Provider>
       </section>
 
       <section id='experience' className='snap-center'>
@@ -84,3 +97,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     }
   }
 }
+
+export { offSetContext }

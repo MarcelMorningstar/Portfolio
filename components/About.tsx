@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import useWindowSize from '../hooks/useWindowSize'
+import React, { useContext } from 'react'
+import { offSetContext } from '../pages'
 import Layout from './Layout'
 import { motion } from 'framer-motion'
 import styles from '../styles/About.module.css'
@@ -11,17 +11,7 @@ type Props = {
 }
 
 export default function About({ pageInfo }: Props) {
-  const [offSet, setOffSet] = useState({ x: 0, y: 0})
-  const windowSize = useWindowSize();
-  
-  useEffect(() => {
-    const div = document.getElementById('imageContainer') as HTMLDivElement
-
-    setOffSet({
-      x: div.offsetLeft,
-      y: div.offsetTop
-    })
-  }, [windowSize])
+  const offSet = useContext(offSetContext);
 
   const cellStyle = {
     backgroundImage: `url(${urlFor(pageInfo.aboutPicture).url()})`,
