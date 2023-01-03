@@ -46,7 +46,7 @@ export default function ExperienceCard({ experience }: Props) {
       <div>
         <div className='flex space-x-2 mt-4'>
           {
-            experience.technologies.map(technology => (
+            experience?.technologies.map(technology => (
               <Image 
                 key={technology._id}
                 className='w-8 h-8 xs:w-10 xs:h-10 object-contain'
@@ -60,13 +60,13 @@ export default function ExperienceCard({ experience }: Props) {
         </div>
         
         <p className='pt-1 pb-5 text-[var(--fg-color)] text-sm 3xs:text-base font-light'>
-          { new Date(experience.dateStarted).toDateString() } - { experience.isCurrentlyWorkingHere ? "PRESENT" : new Date(experience.dateEnded).toDateString() }
+          { new Date(experience.dateStarted).toDateString() } - { experience.isCurrentlyWorkingHere ? "PRESENT" : new Date(experience?.dateEnded).toDateString() }
         </p>
       </div>
 
       <ul className='overflow-y-scroll ml-1 pr-5 space-y-4 text-base sm:text-lg list-disc list-inside scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#ECDBBA]/60 scrollbar-thumb-rounded-full scrollbar-track-rounded-full'>
         {
-          experience.summery.map((item, index) => (
+          experience?.summery.map((item, index) => (
             <li key={index}>{ item }</li>
           ))
         }

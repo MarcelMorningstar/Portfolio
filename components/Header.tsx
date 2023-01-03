@@ -1,9 +1,9 @@
 import React from 'react'
+import Link from 'next/link';
 import { motion } from 'framer-motion'
 import { AiOutlineInstagram, AiOutlineGithub } from 'react-icons/ai'
 import { MdOutlineMail } from "react-icons/md";
 import styles from '../styles/Header.module.css'
-import Link from 'next/link';
 
 type Props = {}
 
@@ -26,12 +26,12 @@ export default function Header({}: Props) {
           duration: 1.2
         }}
       >
-        <a href='https://www.instagram.com/marcelcoldwater/' className={styles.link}>
+        <Link href='https://www.instagram.com/marcelcoldwater/' target='_blank' className={styles.link}>
           <AiOutlineInstagram />
-        </a>
-        <a href='https://github.com/marcelmorningstar' className={styles.link}>
+        </Link>
+        <Link href='https://github.com/marcelmorningstar' target='_blank' className={styles.link}>
           <AiOutlineGithub />
-        </a>
+        </Link>
       </motion.div>
 
       <motion.div 

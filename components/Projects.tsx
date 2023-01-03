@@ -1,7 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 import Image from 'next/image'
 import Layout from './Layout'
 import { motion } from 'framer-motion'
+import { HiOutlineExternalLink } from "react-icons/hi"
 import { urlFor } from '../sanity'
 import { Project } from '../typings'
 
@@ -45,9 +47,11 @@ export default function Projects({ projects }: Props) {
                 />
               </motion.div>
               
-
               <div className='space-y-4 xl:space-y-8 lg:px-16 xl:px-20 2xl:px-24' style={{ width: 'min(80vw, 64rem)'}}>
-                <h4 className='text-center text-3xl sm:text-4xl font-semibold'>{ project.title }</h4>
+                <div className='flex justify-center'>
+                  <h4 className='text-center text-3xl sm:text-4xl font-semibold'>{ project.title }</h4>
+                  {project?.linkToProject && <Link href={project?.linkToProject} target='_blank'><HiOutlineExternalLink style={{ width: '20px', height: '20px' }} /></Link> }
+                </div>
                 
                 <div className='flex items-center justify-center space-x-2'>
                   {

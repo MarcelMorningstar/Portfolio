@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { HiPhone, HiMail } from "react-icons/hi"
+import { PageInfo } from '../typings'
 import styles from '../styles/Contact.module.css'
 
 type Inputs = {
@@ -11,9 +12,11 @@ type Inputs = {
   message: string
 }
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function Contact({}: Props) {
+export default function Contact({ pageInfo }: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
@@ -25,11 +28,11 @@ export default function Contact({}: Props) {
         <div className='space-y-1'>
           <div className='flex items-center justify-center gap-5'>
             <HiPhone className='w-7 h-7 text-[var(--color)] animate-pulse' />
-            <p className={styles.contacts}>+371 26521385</p>
+            <p className={styles.contacts}>{ pageInfo.phone }</p>
           </div>
           <div className='flex items-center justify-center gap-5'>
             <HiMail className='w-7 h-7 text-[var(--color)] animate-pulse' />
-            <p className={styles.contacts}>rolland1403@gmail.com</p>
+            <p className={styles.contacts}>{ pageInfo.email }</p>
           </div>
         </div>
 
