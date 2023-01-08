@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import useWindowSize from '../hooks/useWindowSize'
 import Layout from './Layout'
 import { motion } from 'framer-motion'
 import { urlFor } from '../sanity'
@@ -12,21 +11,6 @@ type Props = {
 }
 
 export default function Skills({ skills }: Props) {
-  const [col, setCol] = useState(4)
-  const windowSize = useWindowSize()
-
-  useEffect(() => {
-    if (windowSize.width >= 652) {
-      setCol(4)
-    } else if (windowSize.width < 652) {
-      setCol(3)
-    }
-  }, [windowSize])
-
-  const containerStyle = {
-    gridTemplateColumns: `repeat(${col}, 1fr)`
-  }
-
   const container = {
     hidden: { opacity: 1, scale: 0 },
     visible: {
@@ -50,8 +34,7 @@ export default function Skills({ skills }: Props) {
   return (
     <Layout title='skills' subTitle='take a peek at my knowledge'>
       <motion.div 
-        className='grid gap-3 xs:gap-5 h-fit' 
-        style={containerStyle}
+        className='grid grid-cols-3 sm:grid-cols-4 gap-3 xs:gap-5 h-fit' 
         variants={container}
         initial="hidden"
         whileInView="visible"
